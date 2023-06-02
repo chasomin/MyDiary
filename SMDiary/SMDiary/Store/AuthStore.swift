@@ -101,11 +101,10 @@ class AuthStore: ObservableObject {
     // MARK: 체크용 - 비밀번호 형식 맞는지, 두 개 동일한지
     func checkPasswordFormat() -> Bool {
         let passwordRegex = "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&()_+=-]).{8,50}$"
-        return password.range(of: passwordRegex, options: .regularExpression) != nil
-        
+//        return password.range(of: passwordRegex, options: .regularExpression) != nil
         if password != confirmPassword {
             return false
-        }else {
+        } else {
             return password.range(of: passwordRegex, options: .regularExpression) != nil
         }
         

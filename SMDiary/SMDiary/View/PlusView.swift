@@ -59,11 +59,11 @@ struct PlusView: View {
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(selectedPhotosData, id: \.self) { photoData in
-                            if let image = photoData {
-                                Image(uiImage: image)
+//                            if let image = photoData {
+                                Image(uiImage: photoData)
                                     .resizable()
                                     .frame(width:90, height: 90)
-                            }
+//                            }
 //                            if let image = UIImage(data: photoData) {
 //                                Image(uiImage: image)
 //                                    .resizable()

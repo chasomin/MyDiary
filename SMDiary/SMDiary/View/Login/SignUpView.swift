@@ -155,8 +155,8 @@ struct SignUpView: View {
                         authStore.confirmPassword = self.confirmPassword
                         await authStore.signUp()
                         try await authStore.signIn()
-                        let userUID = String(AuthStore().currentUser!.uid)
-                        try await authStore.addUserList(Users(id: userUID, userEmail: self.email))
+                        let userUID = String(AuthStore().currentUser?.uid ?? "")
+                        authStore.addUserList(Users(id: userUID, userEmail: self.email))
                     }
                 } label: {
                     ZStack{
